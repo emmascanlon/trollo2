@@ -1,0 +1,5 @@
+Board Index
+<h1>Select a Board</h1>
+<% @boards.each do |board| %>
+  <h3> <%= link_to board.name, board_path(board) %> <br> </h3>
+  <% end %>

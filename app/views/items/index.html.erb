@@ -1,0 +1,7 @@
+<h1><%= @list.title %> </h1>
+<h3>
+<% @items.each do |item| %>
+  <%= item.title %><br>
+  <%= item.details %><br>
+  <%=link_to 'Edit', edit_list_item_path(@list,item)%><br>
+<% end %>

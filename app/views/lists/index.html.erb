@@ -1,0 +1,5 @@
+List Index <br>
+
+<% @lists.each do |list| %>
+  <%= link_to list.title, board_list_path(@board, list)%> <br>
+  <%end %>
