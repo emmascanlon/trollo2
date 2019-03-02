@@ -1,6 +1,6 @@
 class List < ApplicationRecord
   belongs_to :board
-  has_many :items
+  has_many :items, dependent: :destroy
 
   
   def self.all_lists(id)

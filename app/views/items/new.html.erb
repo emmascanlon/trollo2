@@ -1,2 +1,13 @@
-<h1>Items#new</h1>
-<p>Find me in app/views/items/new.html.erb</p>
+<body>
+<h1>Add New Task</h1>
+<%= form_for [@list, @item] do |f| %>
+  <%= f.label :title%>
+  <%= f.text_field :title %><br><br>
+  <%= f.label :details %>
+  <%= f.text_area :details %><br><br>
+  <%= f.label :priority %>
+  <%= f.text_field :priority %> <br><br>
+  <%=f.submit %>
+  <% end %>
+
+  </body>

@@ -1,2 +1,18 @@
-<h1>Items#edit</h1>
-<p>Find me in app/views/items/edit.html.erb</p>
+<h1>Edit</h1>
+
+<%= form_for [@list, @item] do |f| %>
+  <div class = "field">
+  <%= f.label :title %>
+  <%= f.text_field :title, class: "input" %>
+</div>
+<div class="field">
+<%= f.label :details %>
+<%= f.text_area :details %>
+</div>
+<div class = "field">
+<%= f.label :priority %>
+<%= f.text_field :priority %>
+</div>
+<%=f.submit %>
+
+  <%end%>

@@ -1,5 +1,7 @@
 List Index <br>
+<h1> <%= @board.name %><br> </h1>
+<h5><%= link_to "Add New List", new_board_list_path(@board) %></h5> <hr>
 
 <% @lists.each do |list| %>
-  <%= link_to list.title, board_list_path(@board, list)%> <br>
+ <h3> <%= link_to list.title, board_list_path(@board, list)%> <br></h3>
   <%end %>

@@ -2,5 +2,7 @@ LIST SHOW
 
 <h1><%= @list.title %></h1>
 
-<h4><%= link_to "Show all Items", list_items_path(@list) %>
+<h4><%= link_to "Show all Items", list_items_path(@list) %> ||
+<%= link_to "Edit", edit_board_list_path(@board,@list) %> ||
+<%= link_to "Delete", board_list_path(@board,@list), method: :delete %>
 
