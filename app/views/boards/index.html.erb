@@ -1,6 +1,5 @@
 Board Index
 <h1>Select a Board</h1><br>
-<%=link_to 'Create New Board', new_board_path%>  
 <% @boards.each do |board| %>
   <h3> <%= link_to board.name, board_path(board) %></h3>
   <h5> <%= link_to "Edit", edit_board_path(board) %> ||
