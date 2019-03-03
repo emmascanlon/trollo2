@@ -3,23 +3,19 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = @list.items
+    @items = Item.all_items(@list.id)
   end
 
   def show
   end
 
   def new
-    @item = @list.items.new
+    @item = List.items.new
   end
 
   def create
-    @item = @list.items.new(item_params)
-    if @item.save
-      redirect_to list_items_path(@list)
-    else 
-      render :new
-  end
+   Item.create_item(item_params, list.id)
+   redirect_to list_items_path(@list)
 end
 
   def edit
@@ -27,11 +23,8 @@ end
   end
 
   def update
-    if @item.update(item_params)
-      redirect_to list_items_path(@list)
-    else
-      render :edit
-  end
+    Item.update_item(@item.id, item_params)
+    redirect_to list_items_path(@list)
 end
 
   def destroy
